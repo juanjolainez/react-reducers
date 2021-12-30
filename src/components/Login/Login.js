@@ -18,6 +18,7 @@ const emailReducer = (state, action) => {
 
 const passwordReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
+    console.log(action);
     return {value: action.val, isValid: action.val.trim().length > 6};
   }
 
@@ -79,7 +80,7 @@ const Login = (props) => {
   };
 
   const validatePasswordHandler = () => {
-    dispatchPassword({type:'USER_INPUT'});
+    dispatchPassword({type:'INPUT_BLUR'});
   };
 
   const submitHandler = (event) => {
